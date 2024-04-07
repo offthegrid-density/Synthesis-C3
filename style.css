@@ -74,7 +74,7 @@ body {
   /* Old versions of Firefox */
   -ms-user-select: none;
   /* Internet Explorer/Edge */
-  user-select:
+  user-select: none;
 }
 
 .finalTitle {
@@ -114,14 +114,14 @@ body {
 
 .video {
   transition: .5s;
-  transform:translateY(50vh);
+  transform: translateY(50vh);
   opacity: 0;
   padding: 0;
   height: 80vh;
 }
 
 .videoAppear {
-  transform:translateY(0vh);
+  transform: translateY(0vh);
   opacity: 1;
 }
 
@@ -142,10 +142,50 @@ a {
   background-color: white;
   border: 0.1vw solid black;
   outline: none;
-  opacity:0;
+  opacity: 0;
   transition: .5s;
 }
 
 #enter:hover {
   background-color: #d8d8d8;
+}
+
+#desktopOnly {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+
+#desktopOnly {
+  display: none;
+}
+
+@media screen and (hover: none){
+  #desktopOnly {
+    display: flex;
+    background-color: white;
+    width: 80vw;
+    height: 100vh;
+    z-index: 999;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    touch-action: none;
+    text-wrap: wrap;
+    text-align: center;
+    padding: 0 10vw;
+  }
+
+  #allObjects {
+    display: none;
+  }
+
 }
